@@ -60,6 +60,34 @@ public class TestSeleniumDemo {
         );
     }
 
+    @Test
+    public void testEmailInput_WithvalidEmail() {
+
+        String mesageEmail = "t.urbsaitis@gmail.com";
+        String expectedResult = "t.urbsaitis@gmail.com";
+        String actualResult;
+
+        WebElement inputUserEmail = driver.findElement(By.xpath("//input[@id='userEmail']"));
+        inputUserEmail.sendKeys(mesageEmail);
+
+        WebElement buttonSubmit = driver.findElement(By.xpath("//button[@id='submit']"));
+        buttonSubmit.click();
+
+        WebElement paragraphUserEmail = driver.findElement(By.xpath("//p[@id='email']"));
+        actualResult = paragraphUserEmail.getText();
+
+
+
+
+
+
+
+
+        Assert.assertTrue(
+                actualResult.contains(expectedResult),
+                String.format("Actual: %s; Expected: %s", actualResult, expectedResult));
+    }
+
     @AfterMethod
     public void tearDown() {
         driver.quit();
