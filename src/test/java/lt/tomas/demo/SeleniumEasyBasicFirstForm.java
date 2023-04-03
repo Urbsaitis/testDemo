@@ -33,7 +33,6 @@ public class SeleniumEasyBasicFirstForm {
         driver.get("http://demo.seleniumeasy.com/basic-first-form-demo.html");
     }
 
-
     @Test
     public void singleInputField() {
 
@@ -55,7 +54,6 @@ public class SeleniumEasyBasicFirstForm {
                 actualResult.contains(expectedResult),
                 String.format("Actual: %s; Expected: %s", actualResult, expectedResult)
         );
-
     }
 
     @Test
@@ -82,9 +80,7 @@ public class SeleniumEasyBasicFirstForm {
                 actualResult.contains(expectedResult),
                 String.format("Actual: %s; Expected: %s", actualResult, expectedResult)
         );
-
     }
-
 
     @Test
     public void twoInputFieldsNotValid() {
@@ -110,10 +106,7 @@ public class SeleniumEasyBasicFirstForm {
                 actualResult.contains(expectedResult),
                 String.format("Actual: %s; Expected: %s", actualResult, expectedResult)
         );
-
     }
-
-
     @AfterMethod
     public void tearDown() {
         driver.quit();
